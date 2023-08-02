@@ -1,7 +1,7 @@
 import type { App } from "vue";
-import Button from "./button";
+import SelectIcon from "./selectIcon";
 
-const components = [Button];
+const components = [SelectIcon];
 
 const install = (app: App): void => {
   // 遍历注册所有组件
@@ -17,7 +17,7 @@ const install = (app: App): void => {
   );
 };
 
-export { Button };
+export { SelectIcon };
 
 export default {
   install,

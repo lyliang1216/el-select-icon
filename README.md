@@ -12,23 +12,22 @@ npm i vue-styles-button
 
 ```
 <script setup lang="ts">
-import { Button } from "vue3-vue-styles-button";
+import { ref } from "vue";
+import { SelectIcon } from "../packages/index";
+
+const iconName = ref<string>("Setting");
 </script>
 
 <template>
-  <Button class="button">普通</Button>
-  <Button class="button" rounded>普通圆角</Button>
-  <Button class="button" type="gradient">渐变</Button>
-  <Button class="button" type="gradientText" rounded>文字渐变</Button>
-  <Button class="button" disable>禁用</Button>
+  <div>
+    <SelectIcon v-model:icon-name="iconName" />
+    <SelectIcon v-model:icon-name="iconName">
+      <el-button>选择的图标是{{ iconName }}</el-button>
+    </SelectIcon>
+  </div>
 </template>
 
-<style scoped lang="scss">
-.button {
-  width: 240px;
-  height: 50px;
-  margin-bottom: 16px;
-}
-</style>
+<style scoped lang="scss"></style>
+
 
 ```

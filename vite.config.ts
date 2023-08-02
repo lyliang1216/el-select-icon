@@ -30,7 +30,7 @@ export default defineConfig({
     },
     lib: {
       entry: resolve(__dirname, "./packages/index.ts"),
-      name: "Button",
+      name: "SelectIcon",
       fileName: "bundle",
     },
   },

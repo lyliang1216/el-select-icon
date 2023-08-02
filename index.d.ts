@@ -2,7 +2,7 @@ type OptionsType = {
   fixedContentArea?: boolean;
 };
 
-declare module "Button" {
+declare module "SelectIcon" {
   export const Button: import("vue").DefineComponent<OptionsType>;
 
   const install: (

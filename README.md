@@ -5,7 +5,7 @@
 ## 安装
 
 ```
-npm i vue-styles-button
+npm i el-select-icon
 ```
 
 ## 使用
@@ -13,7 +13,7 @@ npm i vue-styles-button
 ```
 <script setup lang="ts">
 import { ref } from "vue";
-import { SelectIcon } from "../packages/index";
+import { SelectIcon } from "el-select-icon";
 
 const iconName = ref<string>("Setting");
 </script>

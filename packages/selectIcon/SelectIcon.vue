@@ -71,7 +71,7 @@ onMounted(() => {
       </div>
     </template>
     <div class="icon-list" v-click-outside="handleClickOutside">
-      <template v-for="(item, index) in iconNames" :key="index">
+      <template v-for="item in iconNames" :key="item">
         <div class="icon-item" :title="item" @click="handle(item)">
           <el-icon>
             <component :is="item" />

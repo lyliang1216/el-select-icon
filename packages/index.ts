@@ -4,6 +4,7 @@ import SelectIcon from "./selectIcon";
 const components = [SelectIcon];
 
 const install = (app: App): void => {
+  console.log(app, "app2");
   // 遍历注册所有组件
   /*
     component.__name ts报错

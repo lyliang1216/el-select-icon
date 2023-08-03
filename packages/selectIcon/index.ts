@@ -6,11 +6,12 @@ import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 
 // 使用install方法，在app.use挂载
 SelectIcon.install = (app: App) => {
-  app.component(SelectIcon.__name as string, SelectIcon);
+  console.log(app, "app1");
   for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(key, component);
   }
   (app as any).use(ElementPlus);
+  app.component(SelectIcon.__name as string, SelectIcon);
 };
 
 export default SelectIcon;

@@ -4,13 +4,33 @@ import VitePluginStyleInject from "vite-plugin-style-inject";
 import dts from "vite-plugin-dts";
 import { resolve } from "path";
 import { fileURLToPath, URL } from "node:url";
+import { visualizer } from "rollup-plugin-visualizer";
+
+import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
+import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   server: {
     open: true,
   },
-  plugins: [vue(), VitePluginStyleInject(), dts({ include: "./packages" })],
+  plugins: [
+    vue(),
+    AutoImport({
+      resolvers: [ElementPlusResolver()],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()],
+    }),
+    VitePluginStyleInject(),
+    dts({ include: "./packages" }),
+    visualizer({
+      open: true, // 打包后自动打开页面
+      gzipSize: true, // 查看 gzip 压缩大小
+      brotliSize: true, // 查看 brotli 压缩大小
+    }),
+  ],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

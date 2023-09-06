@@ -1,14 +1,14 @@
-import { createApp, type App } from "vue";
+import { type App } from "vue";
 import SelectIcon from "./selectIcon";
 
-import ElementPlus from "element-plus";
-import * as ElementPlusIconsVue from "@element-plus/icons-vue";
+// import ElementPlus from "element-plus";
+// import * as ElementPlusIconsVue from "@element-plus/icons-vue";
 
-const _app = createApp(SelectIcon);
-for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
-  _app.component(key, component);
-}
-(_app as any).use(ElementPlus);
+// const _app = createApp(SelectIcon);
+// for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+//   _app.component(key, component);
+// }
+// (_app as any).use(ElementPlus);
 
 const components = [SelectIcon];
 
